@@ -7,9 +7,12 @@ http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   var q = url.parse(req.url, true).query;
   if (q.jugador) {
-  res.end('Recibido');
+    var jugador = JSON.parse(q.jugador);
+  if (typeof jugador.nombre === 'string') {
+    res.end('correcto');
+      }
   } else {
-    res.end('error');
+    res.end('incorrecto');
   }
   
   
