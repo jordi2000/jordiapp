@@ -8,7 +8,10 @@ http.createServer(function (req, res) {
   var q = url.parse(req.url, true).query;
   if (q.jugador) {
     var jugador = JSON.parse(q.jugador);
-  if (typeof jugador.nombre === 'string') {
+  if (typeof jugador.nombre === 'string' &&
+     typeof jugador.pos === 'object' &&
+     typeof jugador.pos.length === 'number' &&
+     jugador.pos.length === 2) {
     res.end('correcto');
   } else {
     res.end('incorrecto');
