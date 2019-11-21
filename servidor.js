@@ -15,7 +15,7 @@ http.createServer(function (req, res) {
      typeof jugador.tam === 'number') {
     //buscar al objeto
     var indice = -1;
-    for (var i = 0; i < juagdores.length; i++) {
+    for (var i = 0; i < jugadores.length; i++) {
     if(jugadores[i].nom === jugador.nom;) {
    indice = i;
      break;
