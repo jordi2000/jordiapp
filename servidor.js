@@ -10,9 +10,11 @@ http.createServer(function (req, res) {
     var jugador = JSON.parse(q.jugador);
   if (typeof jugador.nombre === 'string') {
     res.end('correcto');
-      }
   } else {
     res.end('incorrecto');
+  }
+  } else {
+    res.end('error');
   }
   
   
